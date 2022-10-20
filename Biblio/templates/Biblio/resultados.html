@@ -1,0 +1,35 @@
+{%extends 'Biblio/padre.html'%}
+
+{%block titulo%}
+    Resultados para:
+{%endblock%}
+
+{%block subtitulo%}
+    {busqueda}
+{%endblock%}
+
+{%block rectangulo%}
+    {%for libro in libros%}
+        <div class="col mb-5">
+            <div class="card h-100">
+                <!-- Product image-->
+                <img class="card-img-top" src="{{libro.portada.url}}" width='200px' height="200px" alt="..." />
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="fw-bolder">{{libro.nombre}}</h5>
+                        <h5 class="fw-bolder">{{libro.autor}}</h5>
+                        <!-- Product price-->
+                        ${{libro.precio}}
+                        <ul>
+                            <li>{{libro.idioma}}</li>
+                            <li>{{libro.genero}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Product actions-->
+            </div>
+        </div>
+    {%endfor%}
+{%endblock%}

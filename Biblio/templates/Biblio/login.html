@@ -1,0 +1,16 @@
+{%extends 'Biblio/padre.html'%}
+
+{%block titulo%}
+    Inicia sesión
+{%endblock%}
+
+{%block rectangulo%}
+    <form action='' method='POST'> {% csrf_token %}
+
+        {{datos.as_p}}
+
+        <button type="submit">
+            Iniciar sesión 
+        </button>
+
+{%endblock%}

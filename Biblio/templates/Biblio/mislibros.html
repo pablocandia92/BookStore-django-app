@@ -1,0 +1,38 @@
+{%extends 'Biblio/padre.html'%}
+{%load static%}
+
+{%block titulo%}
+    Tus libros subidos...
+{%endblock%}
+
+{%block rectangulo%}
+    {%for libro in object_list%}
+    <div class="col mb-5">
+        <div class="card h-100">
+            <!-- Product image-->
+            <img class="card-img-top" src="{{libro.portada.url}}" width='200px' height="200px" alt="..." />
+            <!-- Product details-->
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder">{{libro.nombre}}</h5>
+                    <h5 class="fw-bolder">{{libro.autor}}</h5>
+                    <!-- Product price-->
+                    ${{libro.precio}}
+                    <ul>
+                        <li>{{libro.idioma}}</li>
+                        <li>{{libro.genero}}</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{%url 'borrarLibro' libro.id%}">Borrar</a></div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{%url 'editarLibro' libro.id%}">Editar</a></div>
+            </div>
+        </div>
+    </div>  
+    {%endfor%}
+{%endblock%}

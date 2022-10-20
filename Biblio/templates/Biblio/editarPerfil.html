@@ -1,0 +1,16 @@
+{%extends 'Biblio/padre.html'%}
+{%block titulo%}
+    Perfil de:{{usuario}}
+{%endblock%}
+
+{%block rectangulo%}
+    <form action='' method='POST'> {% csrf_token %}
+
+        {{formUser.as_p}}
+
+        <button type="submit">
+            Modificar
+        </button>
+
+    </form>
+{%endblock%}

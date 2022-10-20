@@ -1,0 +1,13 @@
+{%extends 'Biblio/padre.html'%}
+
+{%block titulo%}
+    Borrar Libro
+{%endblock%}
+{%block rectangulo%}
+    <form method="POST"> {%csrf_token%}
+        Estás seguro que deseas borrar el libro: {{object}}
+
+        <button type="submit" value="submit">
+            Borrar
+        </button>
+{%endblock%}

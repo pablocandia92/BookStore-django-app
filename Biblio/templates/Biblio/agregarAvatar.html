@@ -1,0 +1,15 @@
+{%extends 'Biblio/padre.html'%}
+
+{%block titulo%}
+    ¡Añade tu avatar!
+{%endblock%}
+
+{%block rectangulo%}
+    <form method='POST' enctype='multipart/form-data'> {%csrf_token%}
+        {{miFormulario.as_p}}
+
+    <button>
+        Añadir
+    </button>
+    </form>
+{%endblock%}
